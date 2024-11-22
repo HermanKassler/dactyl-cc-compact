@@ -54,6 +54,7 @@ int main() {
     d.key_backspace.extra_width_top = 3;
     d.key_backspace.extra_width_bottom = 11;
     d.key_backspace.extra_width_left = 3;
+    d.key_b.extra_width_right = 4;
 
     d.key_delete.extra_width_top = 3;
     d.key_delete.extra_width_bottom = 11;
@@ -61,7 +62,7 @@ int main() {
 
     d.key_shift.extra_width_bottom = 3;
     d.key_z.extra_width_bottom = 3;
-    d.key_right_arrow.extra_width_bottom = 3;
+    /*d.key_right_arrow.extra_width_bottom = 3;*/
     d.key_left_arrow.extra_width_bottom = 3;
 
     /*d.key_end.extra_width_bottom = 3;*/
@@ -138,15 +139,14 @@ int main() {
     /*               d.key_slash.GetBottomRight().TranslateFront(0, 0, -1),*/
     /*           }));*/
 
-    shapes.push_back(
-        TriFan(d.key_backspace.GetBottomLeft(),
-               {
-                   d.key_left_arrow.GetBottomLeft(),
-                   d.key_left_arrow.GetBottomRight().TranslateFront(0, 0, -1),
-                   d.key_right_arrow.GetBottomLeft().TranslateFront(0, 0, -1),
-                   d.key_right_arrow.GetBottomRight(),
-                   d.key_backspace.GetTopLeft(),
-               }));
+    shapes.push_back(TriFan(d.key_backspace.GetBottomLeft(),
+                            {
+                                d.key_left_arrow.GetBottomLeft(),
+                                d.key_left_arrow.GetBottomRight(),
+                                d.key_right_arrow.GetBottomLeft(),
+                                d.key_right_arrow.GetBottomRight(),
+                                d.key_backspace.GetTopLeft(),
+                            }));
 
     // won't use
     /*shapes.push_back(TriFan(d.key_tilde.GetBottomRight(),*/
@@ -444,22 +444,23 @@ int main() {
         screw_left_bottom.z = 0;
         screw_left_bottom.x += 3.2;
 
-        glm::vec3 screw_left_top = d.key_plus.GetTopLeft().Apply(kOrigin);
+        glm::vec3 screw_left_top = d.key_tab.GetTopLeft().Apply(kOrigin);
         screw_left_top.z = 0;
         screw_left_top.x += 2.8;
         screw_left_top.y += -.5;
 
-        glm::vec3 screw_right_top = d.key_5.GetTopRight().Apply(kOrigin);
+        glm::vec3 screw_right_top = d.key_t.GetTopRight().Apply(kOrigin);
         screw_right_top.z = 0;
-        screw_right_top.x += 4;
-        screw_right_top.y += -15.5;
+        screw_right_top.x += 1;
+        screw_right_top.y += 0; //-15.5;
 
-        glm::vec3 screw_right_bottom = d.key_end.GetBottomLeft().Apply(kOrigin);
+        glm::vec3 screw_right_bottom =
+            d.key_delete.GetBottomLeft().Apply(kOrigin);
         screw_right_bottom.z = 0;
         screw_right_bottom.y += 3.5;
         screw_right_bottom.x += 1.5;
 
-        glm::vec3 screw_right_mid = d.key_ctrl.GetTopLeft().Apply(kOrigin);
+        glm::vec3 screw_right_mid = d.key_b.GetBottomRight().Apply(kOrigin);
         screw_right_mid.z = 0;
         screw_right_mid.y += -.9;
 
@@ -486,7 +487,7 @@ int main() {
 
     // Cut out hole for holder.
     Shape holder_hole = Cube(29.0, 20.0, 12.5).TranslateZ(12 / 2);
-    glm::vec3 holder_location = d.key_4.GetTopLeft().Apply(kOrigin);
+    glm::vec3 holder_location = d.key_r.GetTopLeft().Apply(kOrigin);
     holder_location.z = -0.5;
     holder_location.x += 17.5;
     negative_shapes.push_back(holder_hole.Translate(holder_location));
