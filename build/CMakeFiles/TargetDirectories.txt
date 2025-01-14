@@ -1,0 +1,10 @@
+/home/tore/Documents/dactyl-cc-compact/build/CMakeFiles/dactyl.dir
+/home/tore/Documents/dactyl-cc-compact/build/CMakeFiles/edit_cache.dir
+/home/tore/Documents/dactyl-cc-compact/build/CMakeFiles/rebuild_cache.dir
+/home/tore/Documents/dactyl-cc-compact/build/glm/CMakeFiles/glm_static.dir
+/home/tore/Documents/dactyl-cc-compact/build/glm/CMakeFiles/glm_shared.dir
+/home/tore/Documents/dactyl-cc-compact/build/glm/CMakeFiles/edit_cache.dir
+/home/tore/Documents/dactyl-cc-compact/build/glm/CMakeFiles/rebuild_cache.dir
+/home/tore/Documents/dactyl-cc-compact/build/util/CMakeFiles/util.dir
+/home/tore/Documents/dactyl-cc-compact/build/util/CMakeFiles/edit_cache.dir
+/home/tore/Documents/dactyl-cc-compact/build/util/CMakeFiles/rebuild_cache.dir
